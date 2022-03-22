@@ -1,0 +1,35 @@
+name: two_miners_api
+description: Dart package which manages api for 2miners.com.
+version: 1.0.0
+publish_to: none
+
+environment:
+  sdk: ">=2.16.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_svg: ^1.0.3
+  freezed_annotation: ^1.1.0
+  http: ^0.13.4
+  intl: ^0.17.0
+  json_annotation: ^4.4.0
+  meta: ^1.7.0
+
+dev_dependencies:
+  build_runner: ^2.1.7
+  flutter_test:
+    sdk: flutter
+  freezed: ^1.1.1
+  json_serializable: ^6.1.4
+  very_good_analysis: ^2.4.0
+
+flutter:
+  # All svg logo comes from https://cryptologos.cc, except:
+  # - Callisto: https://github.com/CallistoNetwork/CallistoEtherWallet/blob/master/src/assets/images/clo-logo-solo.svg
+  # - Firo: https://github.com/firoorg/firo/blob/f3fdcc6c8ed9df0ebf7c9d0f9c6ac320fb000f47/src/qt/res/icons/firo.svg
+  # - Zencash: https://raw.githubusercontent.com/HorizenOfficial/HorizenAcademy/918c97f0b5cfd32d6bdb845577e80dc65a81974a/assets/img/horizen-icon.svg
+  # Some icon need to be fixed with this tool https://github.com/RazrFalcon/svgcleaner-gui, because flutter_svg library cannot
+  # parse <style> tag in SVG (https://github.com/dnfield/flutter_svg/issues/105).
+  assets:
+    - assets/
