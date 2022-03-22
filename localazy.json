@@ -1,0 +1,15 @@
+{
+    "writeKey": "write-key",
+    "readKey": "read-key",
+    "upload": {
+        "type": "arb",
+        "files": "lib/l10n/arb/app_en.arb",
+        "deprecate": "project"
+    },
+    "download": {
+        "files": "lib/l10n/arb/app_${lang}.arb",
+        "langAliases": {
+            "zh-Hans": "zh"
+        }
+    }
+}
