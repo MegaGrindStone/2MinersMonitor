@@ -5,29 +5,130 @@
 // license that can be found in the LICENSE file or at
 // https://opensource.org/licenses/MIT.
 
+import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:two_miners_monitor_oss/counter/counter.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:two_miners_api/two_miners_api.dart';
+import 'package:two_miners_monitor_oss/app/bloc/stats_bloc.dart';
+import 'package:two_miners_monitor_oss/app/model/start_ticker.dart';
+import 'package:two_miners_monitor_oss/home/location/home_location.dart';
 import 'package:two_miners_monitor_oss/l10n/l10n.dart';
+import 'package:two_miners_monitor_oss/miners/bloc/miners_bloc.dart';
+import 'package:two_miners_monitor_oss/settings/bloc/settings_bloc.dart';
 
-class App extends StatelessWidget {
-  const App({Key? key}) : super(key: key);
+enum AppFlavour {
+  dev,
+  stg,
+  prod,
+}
+
+class App extends StatefulWidget {
+  const App({Key? key, required this.flavour}) : super(key: key);
+
+  final AppFlavour flavour;
+
+  @override
+  State<App> createState() => _AppState();
+}
+
+class _AppState extends State<App> {
+  final routerDelegate = BeamerDelegate(
+    transitionDelegate: const NoAnimationTransitionDelegate(),
+    locationBuilder: (routeInformation, _) => HomeLocation(routeInformation),
+  );
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(
-        appBarTheme: const AppBarTheme(color: Color(0xFF13B9FF)),
-        colorScheme: ColorScheme.fromSwatch(
-          accentColor: const Color(0xFF13B9FF),
+    return _AppView(flavour: widget.flavour, routerDelegate: routerDelegate);
+  }
+}
+
+class _AppView extends StatelessWidget {
+  const _AppView({
+    Key? key,
+    required this.flavour,
+    required this.routerDelegate,
+  }) : super(key: key);
+
+  final AppFlavour flavour;
+  final BeamerDelegate routerDelegate;
+
+  @override
+  Widget build(BuildContext context) {
+    return RepositoryProvider(
+      create: (context) => CoinRepositories(),
+      child: Blocs(
+        child: BlocBuilder<SettingsBloc, SettingsState>(
+          builder: (context, state) {
+            return MaterialApp.router(
+              routeInformationParser: BeamerParser(),
+              routerDelegate: routerDelegate,
+              backButtonDispatcher: BeamerBackButtonDispatcher(
+                delegate: routerDelegate,
+              ),
+              debugShowCheckedModeBanner: flavour == AppFlavour.dev,
+              theme: ThemeData(
+                useMaterial3: true,
+                colorSchemeSeed: state.settings.colorSeed,
+                brightness: Brightness.light,
+                textTheme: GoogleFonts.carroisGothicTextTheme(
+                  Theme.of(context).textTheme,
+                ),
+              ),
+              darkTheme: ThemeData(
+                useMaterial3: true,
+                colorSchemeSeed: state.settings.colorSeed,
+                brightness: Brightness.dark,
+                textTheme: GoogleFonts.carroisGothicTextTheme(
+                  Theme.of(context).textTheme,
+                ),
+              ),
+              themeMode: state.settings.themeMode,
+              localizationsDelegates: const [
+                AppLocalizations.delegate,
+                GlobalMaterialLocalizations.delegate,
+              ],
+              locale: state.settings.locale,
+              supportedLocales: AppLocalizations.supportedLocales,
+            );
+          },
         ),
       ),
-      localizationsDelegates: const [
-        AppLocalizations.delegate,
-        GlobalMaterialLocalizations.delegate,
+    );
+  }
+}
+
+class Blocs extends StatelessWidget {
+  const Blocs({Key? key, required this.child}) : super(key: key);
+
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context) {
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (context) => SettingsBloc()),
+        BlocProvider(
+          create: (context) => MinersBloc(coinRepositories: context.read()),
+        ),
+        BlocProvider(
+          create: (context) => StatsBloc(
+            ticker: const StatTicker(),
+          ),
+        )
       ],
-      supportedLocales: AppLocalizations.supportedLocales,
-      home: const CounterPage(),
+      child: BlocBuilder<MinersBloc, MinersState>(
+        builder: (context, state) {
+          state.whenOrNull(
+            loadMinersSuccess: (miners) {
+              context.read<StatsBloc>().add(StatsEvent.started(miners: miners));
+            },
+          );
+          return child;
+        },
+      ),
     );
   }
 }

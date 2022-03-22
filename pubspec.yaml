@@ -7,18 +7,36 @@ environment:
   sdk: ">=2.16.0 <3.0.0"
 
 dependencies:
+  beamer: ^1.4.0+1
   bloc: ^8.0.3
+  flex_color_picker: ^2.3.1
   flutter:
     sdk: flutter
   flutter_bloc: ^8.0.1
   flutter_localizations:
     sdk: flutter
+  flutter_native_splash: ^2.1.1
+  flutter_oss_licenses: ^1.1.1
+  formz: ^0.4.1
+  freezed_annotation: ^1.1.0
+  google_fonts: ^2.3.1
+  hydrated_bloc: ^8.1.0
   intl: ^0.17.0
+  json_annotation: ^4.4.0
+  package_info_plus: ^1.4.0
+  path_provider: ^2.0.9
+  timeago: ^3.2.2
+  two_miners_api:
+    path: packages/two_miners_api
+  url_launcher: ^6.0.20
 
 dev_dependencies:
   bloc_test: ^9.0.3
+  build_runner: ^2.1.8
   flutter_test:
     sdk: flutter
+  freezed: ^1.1.0
+  json_serializable: ^6.1.5
   mocktail: ^0.3.0
   very_good_analysis: ^2.4.0
 
