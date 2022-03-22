@@ -1,0 +1,20 @@
+name: Sync to Localazy
+on: 
+  push:
+    paths: 
+      - 'lib/l10n/arb/app_en.arb'
+
+jobs:
+  localazy:
+    name: Sync strings to Localazy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: localazy/upload@v1
+        with:
+          read_key: ${{ secrets.LOCALAZY_READ_KEY }}
+          write_key: ${{ secrets.LOCALAZY_WRITE_KEY }}
+      - uses: localazy/download@v1
+        with:
+          read_key: ${{ secrets.LOCALAZY_READ_KEY }}
+          write_key: ${{ secrets.LOCALAZY_WRITE_KEY }}

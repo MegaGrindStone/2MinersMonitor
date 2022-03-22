@@ -1,7 +1,245 @@
 {
     "@@locale": "en",
-    "counterAppBarTitle": "Counter",
-    "@counterAppBarTitle": {
-        "description": "Text shown in the AppBar of the Counter Page"
+    "languageName": "English",
+    
+    "lastUpdate": "Last Update",
+    "@lastUpdate": {
+        "description": "Text shown in label describing last time update from server"
+    },
+    "blockNumber": "Block Number",
+    "@blockNumber": {
+        "description": "The number of the block, also known as BlockHeight"
+    },
+    "time": "Time",
+    "@time": {
+        "description": "Time"
+    },
+    "txFee": "Tx Fee",
+    "@txFee": {
+        "description": "Transaction fee"
+    },
+
+    "saveButton": "Save",
+    "@saveButton": {
+        "description": "Text shown in any button to save resource"
+    },
+    "removeButton": "Remove",
+    "@removeButton": {
+        "description": "Text shown in any button to remove resource"
+    },
+    "detailButton": "Detail",
+    "@detailButton": {
+        "description": "Text shown in any button to show resource's detail"
+    },
+    "explorerButton": "Open in Block Explorer",
+    "@explorerButton": {
+        "description": "Text shown in open reward or transaction at given block explorer"
+    },
+
+    "minersNavBarTitle": "Miners",
+    "@minersNavBarTitle": {
+        "description": "Text shown in the NavigationBar for MinersPage"
+    },
+    "minersNoMiners": "You don't have a miners yet.",
+    "@minersNoMiners": {
+        "description": "Text shown when user don't have miners in MinersPage"
+    },
+    "minersAddMiner": "Add Miner",
+    "@minersAddMiner": {
+        "description": "Text shown in AddMinerButton and AddMinerPage AppBar title"
+    },
+    "addMinerCoinLabel": "Coin",
+    "@addMinerCoinLabel": {
+        "description": "Text shown in coin field label of the AddMinerPage"
+    },
+    "addMinerAddressLabel": "Address",
+    "@addMinerAddressLabel": {
+        "description": "Text shown in cryptocurrency address field label of the AddMinerPage"
+    },
+    "addMinerCoinNotSelectedError": "Coin should be selected",
+    "@addMinerCoinNotSelectedError": {
+        "description": "Text shown in error when user did not select coin in AddMinerForm"
+    },
+    "addMinerEmptyAddressError": "Address should not be empty",
+    "@addMinerEmptyAddressError": {
+        "description": "Text shown in error when user did not input cryptocurrency address in AddMinerForm"
+    },
+    "minerInfoWebOpenCaption": "Open in web",
+    "@minerInfoWebOpenCaption": {
+        "description": "Text shown in WebButton in MinerInfoPage"
+    },
+    "workersNavBarTitle": "Workers",
+    "@workersNavBarTitle": {
+        "description": "Text shown in the NavigationBar for WorkersPage"
+    },
+    "workersNoWorkers": "You don't have a workers yet.",
+    "@workersNoWorkers": {
+        "description": "Text shown when user don't have workers in WorkersPage"
+    },
+    "workersOfflineBanner": "Offline",
+    "@workersOfflineBanner": {
+        "description": "Text shown in banner showed when worker is offline in WorkersPage"
+    },
+    "rewardsNavBarTitle": "Rewards",
+    "@rewardsNavBarTitle": {
+        "description": "Text shown in the NavigationBar for RewardsPage"
+    },
+    "rewardsNoRewards": "You don't have any rewards yet.",
+    "@rewardsNoRewards": {
+        "description": "Text shown when user don't have rewards in RewardsPage"
+    },
+    "rewardsImmatureBanner": "Immature",
+    "@rewardsImmatureBanner": {
+        "description": "Text shown when reward is still in immature block in RewardsPage"
+    },
+    "rewardsOrphanBanner": "Orphan",
+    "@rewardsOrphanBanner": {
+        "description": "Text shown when reward is in orphan block in RewardsPage"
+    },
+    "rewardsUncleBanner": "Uncle",
+    "@rewardsUncleBanner": {
+        "description": "Text shown when reward is in uncle block in RewardsPage"
+    },
+    "payoutsNavBarTitle": "Payouts",
+    "@payoutsNavBarTitle": {
+        "description": "Text shown in the NavigationBar for PayoutsPage"
+    },
+    "payoutsNoPayouts": "You don't have any payout yet.",
+    "@payoutsNoPayouts": {
+        "description": "Text shown when user don't have payouts in PayoutsPage"
+    },
+    "settingsNavBarTitle": "Settings",
+    "@settingsNavBarTitle": {
+        "description": "Text shown in the NavigationBar for SettingsPage"
+    },
+    "settingsLanguageLabel": "Language",
+    "@settingsLanguageLabel": {
+        "description": "Text shown in the Language label for SettingsPage"
+    },
+    "languageSelectorTitle": "Choose Language",
+    "@languageSelectorTitle": {
+        "description": "Text shown in the title of language selector at SettingsPage"
+    },
+    "settingsColorSeedLabel": "Color Seed",
+    "@settingsColorSeedLabel": {
+        "description": "Text shown in the ColorSeed label for SettingsPage"
+    },
+    "colorSeedSelectorTitle": "Choose Color Seed",
+    "@colorSeedSelectorTitle": {
+        "description": "Text shown in the title of color seed selector at SettingsPage"
+    },
+    "settingsThemeModeLabel": "Theme Mode",
+    "@settingsThemeModeLabel": {
+        "description": "Text shown in the ThemeMode label for SettingsPage"
+    },
+    "themeModeSelectorTitle": "Choose Theme Mode",
+    "@themeModeSelectorTitle": {
+        "description": "Text shown in the title of theme mode selector at SettingsPage"
+    },
+    "settingsAboutLabel": "About",
+    "@settingsAboutLabel": {
+        "description": "Text shown in the About label for SettingsPage"
+    },
+    "aboutNavBarTitle": "About",
+    "@aboutNavBarTitle": {
+        "description": "Text shown in the NavigationBar for AboutPage"
+    },
+    "aboutVersionLabel": "Version",
+    "@aboutVersionLabel": {
+        "description": "Text shown in the Version label for AboutPage"
+    },
+    "aboutContributeLabel": "Contribute",
+    "@aboutContributeLabel": {
+        "description": "Text shown in the Contribute label for AboutPage"
+    },
+    "aboutOSSLabel": "Open Source Licenses",
+    "@aboutOSSLabel": {
+        "description": "Text shown in the Open Source License label for AboutPage"
+    },
+    "aboutPrivacyPolicyLabel": "Privacy Policy",
+    "@aboutPrivacyPolicyLabel": {
+        "description": "Text shown in the Privacy Policy label for AboutPage"
+    },
+
+    "minerUnconfirmedBalance": "Unconfirmed Balance",
+    "@minerUnconfirmedBalance": {
+        "description": "Miner's unconfirmed balance"
+    },
+    "minerUnpaidBalance": "Unpaid Balance",
+    "@minerUnpaidBalance": {
+        "description": "Miner's unpaid balance"
+    },
+    "minerCurrentHashrate": "Current Hashrate",
+    "@minerCurrentHashrate": {
+        "description": "Miner's current hashrate"
+    },
+    "minerAverageHashrate": "Average Hashrate",
+    "@minerAverageHashrate": {
+        "description": "Miner's average hashrate"
+    },
+    "minerTotalPaid": "Total Paid",
+    "@minerTotalPaid": {
+        "description": "Miner's total paid"
+    },
+    "minerLast24HoursReward": "Last 24 Hours Reward",
+    "@minerLast24HoursReward": {
+        "description": "Miner's last 24 hours reward"
+    },
+    "minerWorkersOnline": "Workers Online",
+    "@minerWorkersOnline": {
+        "description": "Miner's workers online"
+    },
+    "minerWorkersOnlineAndOfline": "Workers Online/Offline",
+    "@minerWorkersOnlineAndOfline": {
+        "description": "Miner's workers online and offline"
+    },
+    "minerLastShare": "Last Share",
+    "@minerLastShare": {
+        "description": "Miner's last share"
+    },
+    "minerRoundShare": "Your Round Share",
+    "@minerRoundShare": {
+        "description": "Miner's round share"
+    },
+    "minerValidShareRate": "Valid Share Rate",
+    "@minerValidShareRate": {
+        "description": "Miner's valid share rate"
+    },
+    "minerBlockReward": "Block Reward",
+    "@minerBlockReward": {
+        "description": "Miner's block reward"
+    },
+    "minerLast24HoursBlocks": "Blocks Last 24 hrs",
+    "@minerLast24HoursBlocks": {
+        "description": "Miner's last 24 hours blocks"
+    },
+    "minerLast30DaysBlocks": "Blocks Last 30 days",
+    "@minerLast30DaysBlocks": {
+        "description": "Miner's last 30 days blocks"
+    },
+    "minerPersonalLuck": "Personal luck",
+    "@minerPersonalLuck": {
+        "description": "Miner's personal luck"
+    },
+    "minerSharePercentage": "Your share %",
+    "@minerSharePercentage": {
+        "description": "Miner's share percentage"
+    },
+
+    "apiUnauthorizedException": "Unauthorized",
+    "@apiUnauthorizedException": {
+        "description": "Text shown when api return 401 code"
+    },
+    "apiForbiddenException": "Forbidden",
+    "@apiForbiddenException": {
+        "description": "Text shown when api return 403 code"
+    },
+    "apiNotFoundException": "Not Found",
+    "@apiNotFoundException": {
+        "description": "Text shown when api return 404 code"
+    },
+    "apiUnknownException": "Unknown error",
+    "@apiUnknownException": {
+        "description": "Text shown when api return any other code"
     }
 }
