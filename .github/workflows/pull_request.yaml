@@ -1,6 +1,6 @@
-name: two_miners_monitor_oss
+name: Pull Request
 
-on: [pull_request, push]
+on: [pull_request]
 
 jobs:
   build:
