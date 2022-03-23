@@ -85,17 +85,17 @@ android {
         production {
             dimension "default"
             applicationIdSuffix ""
-            manifestPlaceholders = [appName: "Two Miners Monitor Oss"]
+            manifestPlaceholders = [appName: "2Miners Monitor (OSS)"]
         }
         staging {
             dimension "default"
             applicationIdSuffix ".stg"
-            manifestPlaceholders = [appName: "[STG] Two Miners Monitor Oss"]
+            manifestPlaceholders = [appName: "[STG] 2Miners Monitor (OSS)"]
         }        
         development {
             dimension "default"
             applicationIdSuffix ".dev"
-            manifestPlaceholders = [appName: "[DEV] Two Miners Monitor Oss"]
+            manifestPlaceholders = [appName: "[DEV] 2Miners Monitor (OSS)"]
         }
     }
 
