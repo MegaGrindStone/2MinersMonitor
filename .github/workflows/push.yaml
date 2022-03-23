@@ -7,19 +7,12 @@ on:
 
 jobs:
   build:
-    uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/flutter_package.yml@v1
-    with:
-      flutter_channel: stable
-      min_coverage: 20
-
-  codecov:
-    needs: build
-
-    runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
+      - name: Build and Test
+        uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/flutter_package.yml@v1
+        with:
+          flutter_channel: stable
+          min_coverage: 20
       - name: Upload to Codecov
         uses: codecov/codecov-action@v2
         with:
