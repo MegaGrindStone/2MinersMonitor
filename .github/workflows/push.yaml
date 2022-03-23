@@ -18,11 +18,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Run tests
-        run: flutter test --no-pub --coverage --test-randomize-ordering-seed random
       - name: Upload to Codecov
         uses: codecov/codecov-action@v2
         with:
-          files: coverage/lcov.info
+          files: ./coverage/lcov.info
