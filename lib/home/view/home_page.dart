@@ -5,6 +5,7 @@ import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:two_miners_monitor_oss/home/bloc/home_bloc.dart';
 import 'package:two_miners_monitor_oss/home/location/home_location.dart';
 import 'package:two_miners_monitor_oss/home/model/home_nav.dart';
+import 'package:two_miners_monitor_oss/settings/bloc/settings_bloc.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -26,7 +27,14 @@ class _HomePageState extends State<HomePage> {
     final homeNavs = navs(context);
     return BlocProvider(
       create: (context) => HomeBloc(navs: homeNavs),
-      child: const HomeView(),
+      child: BlocBuilder<SettingsBloc, SettingsState>(
+        // Build each time settings changed.
+        builder: (context, state) {
+          return HomeView(
+            key: ValueKey<String>(state.settings.toString()),
+          );
+        },
+      ),
     );
   }
 }

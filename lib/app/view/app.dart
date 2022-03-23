@@ -8,7 +8,6 @@
 import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:two_miners_api/two_miners_api.dart';
 import 'package:two_miners_monitor_oss/app/bloc/stats_bloc.dart';
@@ -86,10 +85,7 @@ class _AppView extends StatelessWidget {
                 ),
               ),
               themeMode: state.settings.themeMode,
-              localizationsDelegates: const [
-                AppLocalizations.delegate,
-                GlobalMaterialLocalizations.delegate,
-              ],
+              localizationsDelegates: AppLocalizations.localizationsDelegates,
               locale: state.settings.locale,
               supportedLocales: AppLocalizations.supportedLocales,
             );

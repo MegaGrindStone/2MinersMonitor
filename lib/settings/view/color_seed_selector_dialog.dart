@@ -1,4 +1,3 @@
-import 'package:beamer/beamer.dart';
 import 'package:flex_color_picker/flex_color_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -12,9 +11,9 @@ class ColorSeedSelectorDialog extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocListener<SettingsBloc, SettingsState>(
       listener: (context, state) {
-        state.whenOrNull(
-          saveSettingSuccess: (_) => context.popToNamed('/settings'),
-        );
+        // state.whenOrNull(
+        //   saveSettingSuccess: (_) => context.popBeamLocation(),
+        // );
       },
       child: const ColorSeedSelectorView(),
     );
@@ -34,7 +33,7 @@ class ColorSeedSelectorView extends StatelessWidget {
         ),
       ),
       content: const ColorSeedSelectorPicker(),
-      actions: const [ColorSeedSelectorSaveButton()],
+      // actions: const [ColorSeedSelectorSaveButton()],
     );
   }
 }

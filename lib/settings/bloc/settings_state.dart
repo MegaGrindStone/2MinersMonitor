@@ -6,7 +6,7 @@ class SettingsState with _$SettingsState {
     required SettingsModel settings,
   }) = _Initial;
 
-  const factory SettingsState.changeSettingSuccess({
+  const factory SettingsState.updateSettingSuccess({
     required SettingsModel settings,
   }) = _UpdateSettingSuccess;
   const factory SettingsState.saveSettingSuccess({

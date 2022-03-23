@@ -1,4 +1,3 @@
-import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:two_miners_monitor_oss/l10n/l10n.dart';
@@ -11,9 +10,9 @@ class ThemeModeSelectorDialog extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocListener<SettingsBloc, SettingsState>(
       listener: (context, state) {
-        state.whenOrNull(
-          saveSettingSuccess: (_) => context.popToNamed('/settings'),
-        );
+        // state.whenOrNull(
+        //   saveSettingSuccess: (_) => context.popBeamLocation(),
+        // );
       },
       child: const ThemeModeSelectorView(),
     );
@@ -33,7 +32,7 @@ class ThemeModeSelectorView extends StatelessWidget {
         ),
       ),
       content: const ThemeModeSelectorDropdown(),
-      actions: const [ThemeModeSelectorSaveButton()],
+      // actions: const [ThemeModeSelectorSaveButton()],
     );
   }
 }

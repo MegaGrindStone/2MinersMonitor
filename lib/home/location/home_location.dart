@@ -1,5 +1,6 @@
 import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:two_miners_api/two_miners_api.dart';
 import 'package:two_miners_monitor_oss/home/view/home_page.dart';
 import 'package:two_miners_monitor_oss/miners/view/add_miner_page.dart';
@@ -7,6 +8,7 @@ import 'package:two_miners_monitor_oss/miners/view/miner_info_page.dart';
 import 'package:two_miners_monitor_oss/miners/view/miners_page.dart';
 import 'package:two_miners_monitor_oss/payouts/view/payouts_page.dart';
 import 'package:two_miners_monitor_oss/rewards/view/rewards_page.dart';
+import 'package:two_miners_monitor_oss/settings/bloc/settings_bloc.dart';
 import 'package:two_miners_monitor_oss/settings/view/about_page.dart';
 import 'package:two_miners_monitor_oss/settings/view/color_seed_selector_dialog.dart';
 import 'package:two_miners_monitor_oss/settings/view/language_selector_dialog.dart';
@@ -21,10 +23,15 @@ class HomeLocation extends BeamLocation<BeamState> {
   @override
   List<BeamPage> buildPages(BuildContext context, BeamState state) {
     return <BeamPage>[
-      const BeamPage(
-        key: ValueKey<String>('home'),
+      BeamPage(
+        key: const ValueKey<String>('home'),
         type: BeamPageType.noTransition,
-        child: HomePage(),
+        child: BlocBuilder<SettingsBloc, SettingsState>(
+          // Build each time settings changed.
+          builder: (context, state) {
+            return HomePage(key: ValueKey<String>(state.settings.toString()));
+          },
+        ),
       ),
     ];
   }

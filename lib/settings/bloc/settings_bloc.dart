@@ -68,7 +68,8 @@ class SettingsBloc extends HydratedBloc<SettingsEvent, SettingsState> {
 
   @override
   Map<String, dynamic>? toJson(SettingsState state) => state.whenOrNull(
-        saveSettingSuccess: (settings) => settings.toJson(),
+        // TODO(MegaGrindStone): change to saveSettingSuccess when #11 is fixed.
+        updateSettingSuccess: (settings) => settings.toJson(),
       );
 }
 

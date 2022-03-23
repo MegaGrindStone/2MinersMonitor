@@ -715,7 +715,7 @@ class _$SettingsStateTearOff {
     );
   }
 
-  _UpdateSettingSuccess changeSettingSuccess(
+  _UpdateSettingSuccess updateSettingSuccess(
       {required SettingsModel settings}) {
     return _UpdateSettingSuccess(
       settings: settings,
@@ -739,21 +739,21 @@ mixin _$SettingsState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(SettingsModel settings) initial,
-    required TResult Function(SettingsModel settings) changeSettingSuccess,
+    required TResult Function(SettingsModel settings) updateSettingSuccess,
     required TResult Function(SettingsModel settings) saveSettingSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(SettingsModel settings)? initial,
-    TResult Function(SettingsModel settings)? changeSettingSuccess,
+    TResult Function(SettingsModel settings)? updateSettingSuccess,
     TResult Function(SettingsModel settings)? saveSettingSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(SettingsModel settings)? initial,
-    TResult Function(SettingsModel settings)? changeSettingSuccess,
+    TResult Function(SettingsModel settings)? updateSettingSuccess,
     TResult Function(SettingsModel settings)? saveSettingSuccess,
     required TResult orElse(),
   }) =>
@@ -761,21 +761,21 @@ mixin _$SettingsState {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(_UpdateSettingSuccess value) changeSettingSuccess,
+    required TResult Function(_UpdateSettingSuccess value) updateSettingSuccess,
     required TResult Function(_SaveSettingSuccess value) saveSettingSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_UpdateSettingSuccess value)? changeSettingSuccess,
+    TResult Function(_UpdateSettingSuccess value)? updateSettingSuccess,
     TResult Function(_SaveSettingSuccess value)? saveSettingSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_UpdateSettingSuccess value)? changeSettingSuccess,
+    TResult Function(_UpdateSettingSuccess value)? updateSettingSuccess,
     TResult Function(_SaveSettingSuccess value)? saveSettingSuccess,
     required TResult orElse(),
   }) =>
@@ -900,7 +900,7 @@ class _$_Initial with DiagnosticableTreeMixin implements _Initial {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(SettingsModel settings) initial,
-    required TResult Function(SettingsModel settings) changeSettingSuccess,
+    required TResult Function(SettingsModel settings) updateSettingSuccess,
     required TResult Function(SettingsModel settings) saveSettingSuccess,
   }) {
     return initial(settings);
@@ -910,7 +910,7 @@ class _$_Initial with DiagnosticableTreeMixin implements _Initial {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(SettingsModel settings)? initial,
-    TResult Function(SettingsModel settings)? changeSettingSuccess,
+    TResult Function(SettingsModel settings)? updateSettingSuccess,
     TResult Function(SettingsModel settings)? saveSettingSuccess,
   }) {
     return initial?.call(settings);
@@ -920,7 +920,7 @@ class _$_Initial with DiagnosticableTreeMixin implements _Initial {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(SettingsModel settings)? initial,
-    TResult Function(SettingsModel settings)? changeSettingSuccess,
+    TResult Function(SettingsModel settings)? updateSettingSuccess,
     TResult Function(SettingsModel settings)? saveSettingSuccess,
     required TResult orElse(),
   }) {
@@ -934,7 +934,7 @@ class _$_Initial with DiagnosticableTreeMixin implements _Initial {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(_UpdateSettingSuccess value) changeSettingSuccess,
+    required TResult Function(_UpdateSettingSuccess value) updateSettingSuccess,
     required TResult Function(_SaveSettingSuccess value) saveSettingSuccess,
   }) {
     return initial(this);
@@ -944,7 +944,7 @@ class _$_Initial with DiagnosticableTreeMixin implements _Initial {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_UpdateSettingSuccess value)? changeSettingSuccess,
+    TResult Function(_UpdateSettingSuccess value)? updateSettingSuccess,
     TResult Function(_SaveSettingSuccess value)? saveSettingSuccess,
   }) {
     return initial?.call(this);
@@ -954,7 +954,7 @@ class _$_Initial with DiagnosticableTreeMixin implements _Initial {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_UpdateSettingSuccess value)? changeSettingSuccess,
+    TResult Function(_UpdateSettingSuccess value)? updateSettingSuccess,
     TResult Function(_SaveSettingSuccess value)? saveSettingSuccess,
     required TResult orElse(),
   }) {
@@ -1025,14 +1025,14 @@ class _$_UpdateSettingSuccess
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'SettingsState.changeSettingSuccess(settings: $settings)';
+    return 'SettingsState.updateSettingSuccess(settings: $settings)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'SettingsState.changeSettingSuccess'))
+      ..add(DiagnosticsProperty('type', 'SettingsState.updateSettingSuccess'))
       ..add(DiagnosticsProperty('settings', settings));
   }
 
@@ -1058,32 +1058,32 @@ class _$_UpdateSettingSuccess
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(SettingsModel settings) initial,
-    required TResult Function(SettingsModel settings) changeSettingSuccess,
+    required TResult Function(SettingsModel settings) updateSettingSuccess,
     required TResult Function(SettingsModel settings) saveSettingSuccess,
   }) {
-    return changeSettingSuccess(settings);
+    return updateSettingSuccess(settings);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(SettingsModel settings)? initial,
-    TResult Function(SettingsModel settings)? changeSettingSuccess,
+    TResult Function(SettingsModel settings)? updateSettingSuccess,
     TResult Function(SettingsModel settings)? saveSettingSuccess,
   }) {
-    return changeSettingSuccess?.call(settings);
+    return updateSettingSuccess?.call(settings);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(SettingsModel settings)? initial,
-    TResult Function(SettingsModel settings)? changeSettingSuccess,
+    TResult Function(SettingsModel settings)? updateSettingSuccess,
     TResult Function(SettingsModel settings)? saveSettingSuccess,
     required TResult orElse(),
   }) {
-    if (changeSettingSuccess != null) {
-      return changeSettingSuccess(settings);
+    if (updateSettingSuccess != null) {
+      return updateSettingSuccess(settings);
     }
     return orElse();
   }
@@ -1092,32 +1092,32 @@ class _$_UpdateSettingSuccess
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(_UpdateSettingSuccess value) changeSettingSuccess,
+    required TResult Function(_UpdateSettingSuccess value) updateSettingSuccess,
     required TResult Function(_SaveSettingSuccess value) saveSettingSuccess,
   }) {
-    return changeSettingSuccess(this);
+    return updateSettingSuccess(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_UpdateSettingSuccess value)? changeSettingSuccess,
+    TResult Function(_UpdateSettingSuccess value)? updateSettingSuccess,
     TResult Function(_SaveSettingSuccess value)? saveSettingSuccess,
   }) {
-    return changeSettingSuccess?.call(this);
+    return updateSettingSuccess?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_UpdateSettingSuccess value)? changeSettingSuccess,
+    TResult Function(_UpdateSettingSuccess value)? updateSettingSuccess,
     TResult Function(_SaveSettingSuccess value)? saveSettingSuccess,
     required TResult orElse(),
   }) {
-    if (changeSettingSuccess != null) {
-      return changeSettingSuccess(this);
+    if (updateSettingSuccess != null) {
+      return updateSettingSuccess(this);
     }
     return orElse();
   }
@@ -1216,7 +1216,7 @@ class _$_SaveSettingSuccess
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(SettingsModel settings) initial,
-    required TResult Function(SettingsModel settings) changeSettingSuccess,
+    required TResult Function(SettingsModel settings) updateSettingSuccess,
     required TResult Function(SettingsModel settings) saveSettingSuccess,
   }) {
     return saveSettingSuccess(settings);
@@ -1226,7 +1226,7 @@ class _$_SaveSettingSuccess
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(SettingsModel settings)? initial,
-    TResult Function(SettingsModel settings)? changeSettingSuccess,
+    TResult Function(SettingsModel settings)? updateSettingSuccess,
     TResult Function(SettingsModel settings)? saveSettingSuccess,
   }) {
     return saveSettingSuccess?.call(settings);
@@ -1236,7 +1236,7 @@ class _$_SaveSettingSuccess
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(SettingsModel settings)? initial,
-    TResult Function(SettingsModel settings)? changeSettingSuccess,
+    TResult Function(SettingsModel settings)? updateSettingSuccess,
     TResult Function(SettingsModel settings)? saveSettingSuccess,
     required TResult orElse(),
   }) {
@@ -1250,7 +1250,7 @@ class _$_SaveSettingSuccess
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(_UpdateSettingSuccess value) changeSettingSuccess,
+    required TResult Function(_UpdateSettingSuccess value) updateSettingSuccess,
     required TResult Function(_SaveSettingSuccess value) saveSettingSuccess,
   }) {
     return saveSettingSuccess(this);
@@ -1260,7 +1260,7 @@ class _$_SaveSettingSuccess
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_UpdateSettingSuccess value)? changeSettingSuccess,
+    TResult Function(_UpdateSettingSuccess value)? updateSettingSuccess,
     TResult Function(_SaveSettingSuccess value)? saveSettingSuccess,
   }) {
     return saveSettingSuccess?.call(this);
@@ -1270,7 +1270,7 @@ class _$_SaveSettingSuccess
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_UpdateSettingSuccess value)? changeSettingSuccess,
+    TResult Function(_UpdateSettingSuccess value)? updateSettingSuccess,
     TResult Function(_SaveSettingSuccess value)? saveSettingSuccess,
     required TResult orElse(),
   }) {
