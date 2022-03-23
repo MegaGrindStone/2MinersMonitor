@@ -7,9 +7,9 @@ import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:two_miners_monitor_oss/l10n/l10n.dart';
 import 'package:two_miners_monitor_oss/settings/model/settings_model.dart';
 
+part 'settings_bloc.freezed.dart';
 part 'settings_event.dart';
 part 'settings_state.dart';
-part 'settings_bloc.freezed.dart';
 
 class SettingsBloc extends HydratedBloc<SettingsEvent, SettingsState> {
   SettingsBloc()

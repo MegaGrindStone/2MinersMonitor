@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:timeago/timeago.dart' as timeago;
 import 'package:two_miners_monitor_oss/l10n/l10n.dart';
+import 'package:two_miners_monitor_oss/settings/bloc/settings_bloc.dart';
 import 'package:two_miners_monitor_oss/workers/bloc/worker_bloc.dart';
 import 'package:two_miners_monitor_oss/workers/model/worker_model.dart';
 
@@ -92,13 +93,17 @@ class WorkerCardTitleView extends StatelessWidget {
                   ),
               maxLines: 1,
             ),
-            Text(
-              '''
-${context.l10n.minerLastShare}: ${timeago.format(state.worker.lastShare)}''',
-              style: Theme.of(context).textTheme.bodySmall!.copyWith(
-                    color: Theme.of(context).colorScheme.onPrimaryContainer,
-                  ),
-              maxLines: 1,
+            BlocBuilder<SettingsBloc, SettingsState>(
+              builder: (context, settingsState) {
+                return Text(
+                  '''
+${context.l10n.minerLastShare}: ${timeago.format(state.worker.lastShare, locale: settingsState.settings.locale.languageCode)}''',
+                  style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                        color: Theme.of(context).colorScheme.onPrimaryContainer,
+                      ),
+                  maxLines: 1,
+                );
+              },
             ),
           ],
         );

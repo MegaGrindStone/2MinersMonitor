@@ -9,6 +9,8 @@ import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:intl/intl.dart';
+import 'package:timeago/timeago.dart' as timeago;
 import 'package:two_miners_api/two_miners_api.dart';
 import 'package:two_miners_monitor_oss/app/bloc/stats_bloc.dart';
 import 'package:two_miners_monitor_oss/app/model/start_ticker.dart';
@@ -45,7 +47,7 @@ class _AppState extends State<App> {
 }
 
 class _AppView extends StatelessWidget {
-  const _AppView({
+  _AppView({
     Key? key,
     required this.flavour,
     required this.routerDelegate,
@@ -54,6 +56,27 @@ class _AppView extends StatelessWidget {
   final AppFlavour flavour;
   final BeamerDelegate routerDelegate;
 
+  final Map<String, timeago.LookupMessages> timeagoMap = {
+    'ar': timeago.ArMessages(),
+    'de': timeago.DeMessages(),
+    'en': timeago.EnMessages(),
+    'es': timeago.EsMessages(),
+    'fr': timeago.FrMessages(),
+    'hu': timeago.HuMessages(),
+    'id': timeago.IdMessages(),
+    'it': timeago.ItMessages(),
+    'ja': timeago.JaMessages(),
+    'ko': timeago.KoMessages(),
+    'pl': timeago.PlMessages(),
+    'pt': timeago.PtBrMessages(),
+    'ru': timeago.RuMessages(),
+    'th': timeago.ThMessages(),
+    'tr': timeago.TrMessages(),
+    'uk': timeago.UkMessages(),
+    'vi': timeago.ViMessages(),
+    'zh': timeago.ZhCnMessages(),
+  };
+
   @override
   Widget build(BuildContext context) {
     return RepositoryProvider(
@@ -61,6 +84,12 @@ class _AppView extends StatelessWidget {
       child: Blocs(
         child: BlocBuilder<SettingsBloc, SettingsState>(
           builder: (context, state) {
+            Intl.defaultLocale = state.settings.locale.languageCode;
+            timeago.setLocaleMessages(
+              state.settings.locale.languageCode,
+              timeagoMap[state.settings.locale.languageCode] ??
+                  timeago.EnMessages(),
+            );
             return MaterialApp.router(
               routeInformationParser: BeamerParser(),
               routerDelegate: routerDelegate,
