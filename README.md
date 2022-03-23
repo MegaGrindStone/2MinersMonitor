@@ -1,6 +1,6 @@
 # Two Miners Monitor Oss
 
-![coverage][coverage_badge]
+[![codecov](https://codecov.io/gh/MegaGrindStone/2MinersMonitor/branch/main/graph/badge.svg?token=1HWM8XRCE3)](https://codecov.io/gh/MegaGrindStone/2MinersMonitor)
 [![style: very good analysis][very_good_analysis_badge]][very_good_analysis_link]
 [![License: MIT][license_badge]][license_link]
 
