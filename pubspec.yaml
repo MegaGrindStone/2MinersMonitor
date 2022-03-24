@@ -1,6 +1,6 @@
 name: two_miners_monitor_oss
 description: Unofficial monitoring app for 2miners.com
-version: 1.0.1+2
+version: 1.0.2+3
 publish_to: none
 
 environment:
