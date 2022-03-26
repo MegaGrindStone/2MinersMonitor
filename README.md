@@ -16,11 +16,7 @@ Unofficial monitoring app for 2miners.com.
 
 ## Screenshot
 
-<img src='https://play-lh.googleusercontent.com/WThbfldAIHVFMYWytOneMwAkqXluLodYDXAmlhkGzStrkfVCXqKQBaAVU8W6edjj3w=w720-h310'>
-<img src='https://play-lh.googleusercontent.com/IzctiGv6H_xgB5-asI33whd1J3JxQZ6lCu7kqq18bedKZmQz0OvOaG8bkzWB4jL1sOA=w720-h310'>
-<img src='https://play-lh.googleusercontent.com/9Xccv3vgZAfZwMM4E0cmEN-YC4Fd3CCgvYM4ZVYyGdL0l0fEwjIkQm_-6o1oxOmUB64=w720-h310'>
-<img src='https://play-lh.googleusercontent.com/TQiHzsIkU2mGs7utKR5vrMUSJuwrpV2LnFRvs7dHv1qZpmFDYV_MtUfXJ3Uv-FwL6uau=w720-h310'>
-<img src='https://play-lh.googleusercontent.com/EoaDDg2paYJ5Q3MXNRy5g-vAkQLPFV0vXfccGYLbwOHmneecLCTH_74q6g5G2mHvoy8-=w720-h310'>
+<img src='https://play-lh.googleusercontent.com/WThbfldAIHVFMYWytOneMwAkqXluLodYDXAmlhkGzStrkfVCXqKQBaAVU8W6edjj3w=w720-h310'> <img src='https://play-lh.googleusercontent.com/IzctiGv6H_xgB5-asI33whd1J3JxQZ6lCu7kqq18bedKZmQz0OvOaG8bkzWB4jL1sOA=w720-h310'> <img src='https://play-lh.googleusercontent.com/9Xccv3vgZAfZwMM4E0cmEN-YC4Fd3CCgvYM4ZVYyGdL0l0fEwjIkQm_-6o1oxOmUB64=w720-h310'> <img src='https://play-lh.googleusercontent.com/TQiHzsIkU2mGs7utKR5vrMUSJuwrpV2LnFRvs7dHv1qZpmFDYV_MtUfXJ3Uv-FwL6uau=w720-h310'> <img src='https://play-lh.googleusercontent.com/EoaDDg2paYJ5Q3MXNRy5g-vAkQLPFV0vXfccGYLbwOHmneecLCTH_74q6g5G2mHvoy8-=w720-h310'>
 
 ---
 
