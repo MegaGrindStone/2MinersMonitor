@@ -102,7 +102,10 @@ class NoWorkersView extends StatelessWidget {
         child: FittedBox(
           child: Text(
             context.l10n.workersNoWorkers,
-            style: Theme.of(context).textTheme.headlineMedium,
+            style: Theme.of(context)
+                .textTheme
+                .headlineMedium!
+                .copyWith(color: Theme.of(context).colorScheme.onBackground),
             textAlign: TextAlign.center,
           ),
         ),
