@@ -43,22 +43,23 @@ class TranslatorList extends StatelessWidget {
             title: Padding(
               padding: const EdgeInsets.symmetric(vertical: 20),
               child: FutureBuilder<AppLocalizations>(
-                  future: _loadl10n(locale),
-                  builder: (context, snapshots) {
-                    if (snapshots.connectionState == ConnectionState.done) {
-                      final l10n = snapshots.data!;
-                      return Text(
-                        l10n.languageName,
-                        style: Theme.of(context)
-                            .textTheme
-                            .headlineMedium!
-                            .copyWith(
-                              color: Theme.of(context).colorScheme.onBackground,
-                            ),
-                      );
-                    }
-                    return const SizedBox();
-                  }),
+                future: _loadl10n(locale),
+                builder: (context, snapshots) {
+                  if (snapshots.connectionState == ConnectionState.done) {
+                    final l10n = snapshots.data!;
+                    return Text(
+                      l10n.languageName,
+                      style: Theme.of(context)
+                          .textTheme
+                          .headlineMedium!
+                          .copyWith(
+                            color: Theme.of(context).colorScheme.onBackground,
+                          ),
+                    );
+                  }
+                  return const SizedBox();
+                },
+              ),
             ),
             subtitle: TranslatorItemList(
               translators: entry.value,
