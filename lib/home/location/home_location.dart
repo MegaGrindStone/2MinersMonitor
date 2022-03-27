@@ -15,6 +15,7 @@ import 'package:two_miners_monitor_oss/settings/view/language_selector_dialog.da
 import 'package:two_miners_monitor_oss/settings/view/oss_license_page.dart';
 import 'package:two_miners_monitor_oss/settings/view/settings_page.dart';
 import 'package:two_miners_monitor_oss/settings/view/theme_mode_selector_dialog.dart';
+import 'package:two_miners_monitor_oss/settings/view/translator_page.dart';
 import 'package:two_miners_monitor_oss/workers/view/workers_page.dart';
 
 class HomeLocation extends BeamLocation<BeamState> {
@@ -149,6 +150,12 @@ class HomeContentsLocation extends BeamLocation<BeamState> {
             key: ValueKey<String>('about'),
             type: BeamPageType.slideRightTransition,
             child: AboutPage(),
+          ),
+        if (state.pathPatternSegments.contains('translator'))
+          const BeamPage(
+            key: ValueKey<String>('translator'),
+            type: BeamPageType.slideRightTransition,
+            child: TranslatorPage(),
           ),
         if (state.pathPatternSegments.contains('oss-license'))
           const BeamPage(

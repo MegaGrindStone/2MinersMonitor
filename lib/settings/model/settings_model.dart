@@ -24,12 +24,20 @@ class SettingsModel with _$SettingsModel {
       _$SettingsModelFromJson(json);
 }
 
-Locale localeFromString(String languageCode) {
-  return Locale(languageCode);
+Locale localeFromString(String locale) {
+  final langArr = locale.split('_');
+  if (langArr.length > 1) {
+    return Locale(langArr[0], langArr[1]);
+  }
+  return Locale(locale);
 }
 
 String localeToString(Locale locale) {
-  return locale.languageCode;
+  var localeStr = locale.languageCode;
+  if (locale.countryCode != null) {
+    localeStr += '_${locale.countryCode}';
+  }
+  return localeStr;
 }
 
 Color colorFromInt(int color) {

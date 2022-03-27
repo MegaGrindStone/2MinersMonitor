@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:two_miners_monitor_oss/l10n/l10n.dart';
 import 'package:two_miners_monitor_oss/settings/bloc/settings_bloc.dart';
+import 'package:two_miners_monitor_oss/settings/model/settings_model.dart';
 
 class LanguageSelectorDialog extends StatelessWidget {
   const LanguageSelectorDialog({Key? key}) : super(key: key);
@@ -54,7 +55,7 @@ class LanguageSelectorDropdown extends StatelessWidget {
                 items: l10ns.map(
                   (l10n) {
                     return DropdownMenuItem<Locale>(
-                      value: Locale(l10n.localeName),
+                      value: localeFromString(l10n.localeName),
                       child: Text(
                         l10n.languageName,
                         style: TextStyle(

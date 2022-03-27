@@ -1,6 +1,9 @@
 {
     "@@locale": "en",
     "languageName": "English",
+    "@languageName": {
+        "description": "The name of this language"
+    },
     
     "lastUpdate": "Last Update",
     "@lastUpdate": {
@@ -151,6 +154,10 @@
     "aboutContributeLabel": "Contribute",
     "@aboutContributeLabel": {
         "description": "Text shown in the Contribute label for AboutPage"
+    },
+    "aboutTranslatorLabel": "Translators",
+    "@aboutTranslatorLabel": {
+        "description": "Text shown in the Translators label for AboutPage"
     },
     "aboutOSSLabel": "Open Source Licenses",
     "@aboutOSSLabel": {

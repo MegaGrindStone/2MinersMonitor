@@ -97,7 +97,7 @@ class WorkerCardTitleView extends StatelessWidget {
               builder: (context, settingsState) {
                 return Text(
                   '''
-${context.l10n.minerLastShare}: ${timeago.format(state.worker.lastShare, locale: settingsState.settings.locale.languageCode)}''',
+${context.l10n.minerLastShare}: ${timeago.format(state.worker.lastShare, locale: settingsState.settings.locale.toLanguageTag())}''',
                   style: Theme.of(context).textTheme.bodySmall!.copyWith(
                         color: Theme.of(context).colorScheme.onPrimaryContainer,
                       ),
