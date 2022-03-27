@@ -42,6 +42,7 @@ class AboutList extends StatelessWidget {
       delegate: SliverChildListDelegate(const [
         AboutVersion(),
         AboutContribute(),
+        AboutTranslator(),
         AboutOSSLicense(),
         AboutPrivacyPolicy(),
       ]),
@@ -102,6 +103,25 @@ class AboutContribute extends StatelessWidget {
       },
       title: Text(
         context.l10n.aboutContributeLabel,
+        style: TextStyle(
+          color: Theme.of(context).colorScheme.onBackground,
+        ),
+      ),
+    );
+  }
+}
+
+class AboutTranslator extends StatelessWidget {
+  const AboutTranslator({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      onTap: () {
+        context.beamToNamed('translator');
+      },
+      title: Text(
+        context.l10n.aboutTranslatorLabel,
         style: TextStyle(
           color: Theme.of(context).colorScheme.onBackground,
         ),
