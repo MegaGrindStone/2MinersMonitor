@@ -85,10 +85,10 @@ class _AppView extends StatelessWidget {
       child: Blocs(
         child: BlocBuilder<SettingsBloc, SettingsState>(
           builder: (context, state) {
-            Intl.defaultLocale = state.settings.locale.languageCode;
+            Intl.defaultLocale = state.settings.locale.toLanguageTag();
             timeago.setLocaleMessages(
-              state.settings.locale.languageCode,
-              timeagoMap[state.settings.locale.languageCode] ??
+              state.settings.locale.toLanguageTag(),
+              timeagoMap[state.settings.locale.toLanguageTag()] ??
                   timeago.EnMessages(),
             );
             return MaterialApp.router(

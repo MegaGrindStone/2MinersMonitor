@@ -78,7 +78,8 @@ Locale _selectLocale() {
       kIsWeb ? const Locale('en') : Locale(Platform.localeName);
   final fallbackLocale = AppLocalizations.supportedLocales.firstWhere(
     (locale) =>
-        locale.languageCode == platformLocale.languageCode.substring(0, 2),
+        locale.toLanguageTag() ==
+        platformLocale.toLanguageTag().substring(0, 2),
     orElse: () => const Locale('en'),
   );
   return AppLocalizations.supportedLocales.firstWhere(
