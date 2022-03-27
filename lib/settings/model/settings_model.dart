@@ -25,6 +25,10 @@ class SettingsModel with _$SettingsModel {
 }
 
 Locale localeFromString(String languageCode) {
+  final langArr = languageCode.split('_');
+  if (langArr.length > 1) {
+    return Locale(langArr[0], langArr[1]);
+  }
   return Locale(languageCode);
 }
 
