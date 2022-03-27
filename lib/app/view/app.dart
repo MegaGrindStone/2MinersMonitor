@@ -69,6 +69,7 @@ class _AppView extends StatelessWidget {
     'ko': timeago.KoMessages(),
     'pl': timeago.PlMessages(),
     'pt': timeago.PtBrMessages(),
+    'pt_BR': timeago.PtBrMessages(),
     'ru': timeago.RuMessages(),
     'th': timeago.ThMessages(),
     'tr': timeago.TrMessages(),

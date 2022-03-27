@@ -1,6 +1,9 @@
 {
     "@@locale": "en",
     "languageName": "English",
+    "@languageName": {
+        "description": "The name of this language"
+    },
     
     "lastUpdate": "Last Update",
     "@lastUpdate": {
