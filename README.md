@@ -42,5 +42,5 @@ To put your name on list of translator inside the app, please don't edit the cod
 [very_good_cli_link]: https://github.com/VeryGoodOpenSource/very_good_cli
 [2miners_link]: https://2miners.com/
 [localazy_link]: https://localazy.com/
-[localazy_2miners_monitor_link]: https://localazy.com/
+[localazy_2miners_monitor_link]: https://localazy.com/p/2miners-monitor
 [timeago_link]: https://pub.dev/packages/timeago
