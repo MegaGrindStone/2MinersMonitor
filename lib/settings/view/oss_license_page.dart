@@ -43,7 +43,7 @@ class OSSLicenseList extends StatelessWidget {
               OSSLicensesModel.fromJson(json as Map<String, dynamic>);
           return ListTile(
             onTap: ossLicense.homepage != null
-                ? () => launch(ossLicense.homepage!)
+                ? () => launchUrl(Uri.parse(ossLicense.homepage!))
                 : null,
             title: Padding(
               padding: const EdgeInsets.symmetric(vertical: 20),

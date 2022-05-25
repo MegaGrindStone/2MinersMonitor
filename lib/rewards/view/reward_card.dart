@@ -237,12 +237,14 @@ class RewardExplorerButton extends StatelessWidget {
         return ElevatedButton(
           onPressed: () async {
             try {
-              await launch(
-                state.miner.repository?.blockURL(
-                      blockHeight: state.reward.blockNumber.toString(),
-                      blockHash: state.reward.blockHash,
-                    ) ??
-                    '',
+              await launchUrl(
+                Uri.parse(
+                  state.miner.repository?.blockURL(
+                        blockHeight: state.reward.blockNumber.toString(),
+                        blockHash: state.reward.blockHash,
+                      ) ??
+                      '',
+                ),
               );
             } catch (e) {
               // Ignore if it's invalid url

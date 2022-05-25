@@ -163,8 +163,10 @@ class PayoutExplorerButton extends StatelessWidget {
         return ElevatedButton(
           onPressed: () async {
             try {
-              await launch(
-                state.miner.repository?.txURL(state.payout.txID) ?? '',
+              await launchUrl(
+                Uri.parse(
+                  state.miner.repository?.txURL(state.payout.txID) ?? '',
+                ),
               );
             } catch (_) {
               // Ignore if it's invalid url

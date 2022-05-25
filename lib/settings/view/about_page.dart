@@ -63,8 +63,10 @@ class AboutVersion extends StatelessWidget {
           final buildNumber = snapshots.data!.buildNumber;
           return ListTile(
             onTap: () {
-              launch(
-                'https://github.com/MegaGrindStone/2MinersMonitor/releases',
+              launchUrl(
+                Uri.parse(
+                  'https://github.com/MegaGrindStone/2MinersMonitor/releases',
+                ),
               );
             },
             title: Column(
@@ -99,7 +101,9 @@ class AboutContribute extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       onTap: () {
-        launch('https://github.com/MegaGrindStone/2MinersMonitor');
+        launchUrl(
+          Uri.parse('https://github.com/MegaGrindStone/2MinersMonitor'),
+        );
       },
       title: Text(
         context.l10n.aboutContributeLabel,
@@ -156,8 +160,10 @@ class AboutPrivacyPolicy extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       onTap: () {
-        launch(
-          'https://www.freeprivacypolicy.com/live/52143c11-1877-432b-8c68-366bb1e0fe1c',
+        launchUrl(
+          Uri.parse(
+            'https://www.freeprivacypolicy.com/live/52143c11-1877-432b-8c68-366bb1e0fe1c',
+          ),
         );
       },
       title: Text(

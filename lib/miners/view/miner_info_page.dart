@@ -707,7 +707,7 @@ class MinerInfoWebButton extends StatelessWidget {
         final webUrl = miner?.webURL ?? '';
         return ElevatedButton(
           onPressed: () async {
-            await launch(webUrl);
+            await launchUrl(Uri.parse(webUrl));
           },
           child: Text(context.l10n.minerInfoWebOpenCaption),
         );

@@ -88,7 +88,7 @@ class TranslatorItemList extends StatelessWidget {
           .map<Widget>(
             (translator) => ListTile(
               onTap: translator.clickURL != null
-                  ? () => launch(translator.clickURL!)
+                  ? () => launchUrl(Uri.parse(translator.clickURL!))
                   : null,
               title: Padding(
                 padding: const EdgeInsets.symmetric(vertical: 20),

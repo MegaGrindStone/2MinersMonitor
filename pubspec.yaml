@@ -28,7 +28,7 @@ dependencies:
   timeago: ^3.2.2
   two_miners_api:
     path: packages/two_miners_api
-  url_launcher: ^6.0.20
+  url_launcher: ^6.1.2
 
 dev_dependencies:
   bloc_test: ^9.0.3
