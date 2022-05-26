@@ -1,5 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.gs.playground.two_miners_monitor_oss">
+    <uses-permission android:name="android.permission.INTERNET"/>
    <application
         android:label="${appName}"
         android:icon="@mipmap/ic_launcher">
